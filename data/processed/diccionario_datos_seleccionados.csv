@@ -1,0 +1,17 @@
+﻿variable,descripcion,tipo_correcto,escala,unidad,rango_o_categorias_observadas,faltantes_n,faltantes_pct
+UPM,Unidad Primaria de Muestreo,Entero,Nominal,Código,14-28774,0,0.0
+NVIVI,Número de orden de vivienda,Entero,Nominal,Código,1-975,0,0.0
+NHOGA,Número de orden de hogar,Entero,Nominal,Código,1-3,0,0.0
+L02,Línea de persona dentro del hogar,Entero,Nominal,Código,1-27,0,0.0
+AÑO,Año de referencia,Entero,Intervalo,Año,2024,0,0.0
+DPTO,Departamento,Entero,Nominal,Código,"0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",0,0.0
+AREA,Área urbana/rural,Entero,Nominal,Código,"1, 6",0,0.0
+P02,Edad,Entero,Razón,Años,0-106,0,0.0
+P06,Sexo,Entero,Nominal,Código,"1, 6",0,0.0
+P09,Estado civil/conyugal,Entero,Nominal,Código,"1, 2, 3, 4, 5, 6",0,0.0
+S01A,Seguro médico principal,Entero,Nominal,Código,"1, 2, 3, 4, 5, 6, 7",0,0.0
+S03,Estado de salud en últimos 90 días,Entero,Nominal,Código,"1, 2, 3, 9",0,0.0
+FACTOR,Factor de expansión oficial (Factor Revisión 2025),Decimal,Razón,Peso muestral,9-894,0,0.0
+añoest,Años de estudio,Texto/numérico,Razón,Años,0-99; incluye código especial 99,3541,6.13
+ipcm,Ingreso per cápita mensual,Texto/numérico,Razón,Guaraníes por mes,0-146786737,130,0.23
+quintili,Quintil de ingreso,Texto/numérico,Ordinal,Quintil,"1, 2, 3, 4, 5",130,0.23

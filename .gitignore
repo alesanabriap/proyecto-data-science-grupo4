@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Fuentes grandes: conservar fuera del repo público si la cátedra no exige versionarlas
+# data/raw/*.csv
+# data/temporal/*.csv

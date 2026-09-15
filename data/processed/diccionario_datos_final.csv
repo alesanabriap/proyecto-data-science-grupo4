@@ -1,0 +1,26 @@
+﻿variable,descripcion,tipo,escala,unidad,rango_o_categorias,faltantes_n,faltantes_pct,rol
+persona_id,Identificador técnico compuesto UPM-NVIVI-NHOGA-L02,Texto,Nominal,Sin unidad,Identificador único construido,0,0.0,Trazabilidad
+UPM,Unidad Primaria de Muestreo,Entero,Nominal,Código,Códigos observados en EPHC 2024,0,0.0,Identificador
+NVIVI,Número de orden de vivienda,Entero,Nominal,Código,Valores enteros observados,0,0.0,Identificador
+NHOGA,Número de orden de hogar,Entero,Nominal,Código,Valores enteros observados,0,0.0,Identificador
+L02,Línea de persona dentro del hogar,Entero,Nominal,Código,Valores enteros observados,0,0.0,Identificador
+anio,Año de referencia de la encuesta,Entero,Intervalo,Año,2024,0,0.0,Contexto temporal
+departamento_codigo,Código de departamento,Entero,Nominal,Código,0-15 en la base analítica,0,0.0,Geografía
+departamento,Departamento de residencia,Texto,Nominal,Categoría,Asunción y departamentos cubiertos por la EPHC,0,0.0,Geografía
+area_codigo,Código de área de residencia,Entero,Nominal,Código,1=Urbana; 6=Rural,0,0.0,Geografía
+area,Área de residencia,Texto,Nominal,Categoría,Urbana; Rural,0,0.0,Predictora/segmentación
+edad,Edad de la persona,Entero,Razón,Años,0-106,0,0.0,Predictora
+sexo_codigo,Código de sexo,Entero,Nominal,Código,1=Hombre; 6=Mujer,0,0.0,Demográfica
+sexo,Sexo de la persona,Texto,Nominal,Categoría,Hombre; Mujer,0,0.0,Predictora/segmentación
+estado_civil_codigo,Código de estado civil o conyugal,Entero,Nominal,Código,Categorías oficiales de P09,0,0.0,Demográfica
+estado_civil,Estado civil o conyugal,Texto,Nominal,Categoría,Categorías observadas en P09,0,0.0,Predictora
+seguro_codigo,Código del seguro médico principal,Entero,Nominal,Código,1-8 según S01A,0,0.0,Variable principal
+tipo_seguro,Tipo de seguro médico principal,Texto,Nominal,Categoría,IPS; seguros privados; sanidades; sin seguro; otro,0,0.0,Variable principal
+tiene_seguro,Indicador binario de cobertura de seguro médico,Entero,Nominal binaria,0/1,0=Sin seguro; 1=Con seguro,0,0.0,Variable explicativa principal
+salud_90d_codigo,Código de estado de salud en los últimos 90 días,Entero,Nominal,Código,1=Enfermo/a; 3=Sano/a en dataset analítico,0,0.0,Variable objetivo
+estado_salud_90d,Estado de salud en los últimos 90 días,Texto,Nominal,Categoría,Enfermo/a; Sano/a,0,0.0,Variable objetivo
+enfermedad_reciente,Indicador binario de enfermedad reciente,Entero,Nominal binaria,0/1,0=Sano/a; 1=Enfermo/a,0,0.0,Variable objetivo
+factor_expansion,Factor de expansión de la versión oficial suministrada de la EPHC 2024 (Factor Revisión 2025),Decimal,Razón,Peso muestral,9-894,0,0.0,Ponderación
+anios_estudio,Años de estudio aprobados,Decimal,Razón,Años,0-18; NaN=No disponible,3543,6.2,Predictora socioeconómica
+ingreso_per_capita_mensual,Ingreso per cápita mensual,Decimal,Razón,Guaraníes por mes,0-146786737,130,0.23,Predictora socioeconómica
+quintil_ingreso,Quintil de ingreso per cápita,Decimal,Ordinal,Quintil,1-5; NaN=No disponible,130,0.23,Predictora socioeconómica
