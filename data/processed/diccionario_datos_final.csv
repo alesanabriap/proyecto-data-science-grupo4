@@ -14,8 +14,8 @@ sexo_codigo,Código de sexo,Entero,Nominal,Código,1=Hombre; 6=Mujer,0,0.0,Demog
 sexo,Sexo de la persona,Texto,Nominal,Categoría,Hombre; Mujer,0,0.0,Predictora/segmentación
 estado_civil_codigo,Código de estado civil o conyugal,Entero,Nominal,Código,Categorías oficiales de P09,0,0.0,Demográfica
 estado_civil,Estado civil o conyugal,Texto,Nominal,Categoría,Categorías observadas en P09,0,0.0,Predictora
-seguro_codigo,Código del seguro médico principal,Entero,Nominal,Código,1-8 según S01A,0,0.0,Variable principal
-tipo_seguro,Tipo de seguro médico principal,Texto,Nominal,Categoría,IPS; seguros privados; sanidades; sin seguro; otro,0,0.0,Variable principal
+seguro_codigo,Código del seguro médico principal,Entero,Nominal,Código,1-7 según S01A,0,0.0,Variable principal
+tipo_seguro,Tipo de seguro médico principal,Texto,Nominal,Categoría,IPS; seguros privados; sanidades; sin seguro,0,0.0,Variable principal
 tiene_seguro,Indicador binario de cobertura de seguro médico,Entero,Nominal binaria,0/1,0=Sin seguro; 1=Con seguro,0,0.0,Variable explicativa principal
 salud_90d_codigo,Código de estado de salud en los últimos 90 días,Entero,Nominal,Código,1=Enfermo/a; 3=Sano/a en dataset analítico,0,0.0,Variable objetivo
 estado_salud_90d,Estado de salud en los últimos 90 días,Texto,Nominal,Categoría,Enfermo/a; Sano/a,0,0.0,Variable objetivo
