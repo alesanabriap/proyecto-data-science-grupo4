@@ -1,0 +1,25 @@
+name: Preparar entregas Fase 1 y 2
+on:
+  push:
+    branches: [preparacion-entregas-fase1-fase2-20261024]
+  workflow_dispatch:
+jobs:
+  empaquetar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencias para validar documentos
+        run: pip install pymupdf nbformat
+      - name: Generar paquetes y validar
+        run: python scripts/preparar_entregas.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Fase1_DataScience_Popov-Bobadilla-Sanabria
+          path: dist/Fase1_DataScience_Popov-Bobadilla-Sanabria.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Fase2_DataScience_Popov-Bobadilla-Sanabria
+          path: dist/Fase2_DataScience_Popov-Bobadilla-Sanabria.zip
