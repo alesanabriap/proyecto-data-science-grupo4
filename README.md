@@ -57,3 +57,23 @@ jupyter nbconvert --to html notebooks/fase2.ipynb --output-dir docs --output fas
 La semilla aleatoria está fijada en `src/fase2/datos.py`, por lo que los resultados son idénticos en cada ejecución.
 
 `notebooks/fase2.ipynb` es un archivo generado: los cambios se hacen en los notebooks de cada parte y luego se vuelve a unir.
+
+## Fase 3 oficial — cobertura médica y perfiles socioeconómicos (EPHC 2024)
+
+**Enfoque aprobado:** la Fase 3 busca identificar perfiles de adultos con y sin cobertura de seguro médico y evaluar modelos predictivos de la **ausencia de cobertura**. El trabajo anterior sobre enfermedad reciente se conserva en las Fases 1 y 2 como diagnóstico que motivó la corrección de la pregunta; no constituye la Fase 3 vigente.
+
+- [Metodología y reproducción de Fase 3](docs/FASE3_METODOLOGIA.md)
+- [Resultados reales y conclusión oficial](docs/FASE3_RESULTADOS.md)
+- [Notebook oficial](notebooks/fase3.ipynb)
+- [Pipeline de ejecución automática](.github/workflows/fase3.yml)
+
+```bash
+pip install -r requirements.txt
+pytest -q tests/test_fase3.py
+python -m src.fase3.ejecutar
+jupyter nbconvert --to notebook --execute --inplace notebooks/fase3.ipynb
+```
+
+Los resultados reproducibles se generan en `output/fase3/` y GitHub Actions los publica como archivo descargable denominado `fase3-cobertura-2024`, junto con los modelos y notebook HTML.
+
+**Resultado:** en T4 el HistGradientBoosting sin clusters alcanzó AUC-ROC 0,793 y accuracy 75,4 %, frente a 67,9 % de baseline. Los tres clusters describen desigualdades de cobertura pero no mejoraron la capacidad predictiva.

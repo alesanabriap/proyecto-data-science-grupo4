@@ -1,4 +1,4 @@
-# Piloto de viabilidad: cobertura médica, perfiles socioeconómicos y NBI
+# Fase 3 oficial: cobertura médica, perfiles socioeconómicos y NBI
 
 **Objetivo:** contrastar si una reformulación de la pregunta de Fase 3 mejora la utilidad estadística y predictiva respecto de la clasificación de enfermedad reciente.
 
@@ -18,9 +18,19 @@
 
 ```bash
 pip install -r requirements.txt
-python -m src.cobertura_piloto.ejecutar
+python -m src.fase3.ejecutar
 ```
 
-**Productos:** `output/piloto_cobertura/resultados.json`, `comparacion_test.csv`, `ranking_validacion.csv`, `resumen_perfiles.csv`, `brechas_descriptivas.csv`, `correlaciones_nbi.csv`, gráficos y modelos joblib. GitHub Actions publica los resultados como artifact.
+**Productos:** `output/fase3/resultados.json`, `comparacion_test.csv`, `ranking_validacion.csv`, `resumen_perfiles.csv`, `brechas_descriptivas.csv`, `correlaciones_nbi.csv`, gráficos y modelos joblib. GitHub Actions publica los resultados como artifact.
 
-**Estado:** piloto exploratorio. Los valores y las recomendaciones finales solo se incorporarán después de ejecutar el programa sobre la base real; no sustituye automáticamente la Fase 3 actual.
+**Estado:** fase oficial. Los valores y las recomendaciones finales solo se incorporarán después de ejecutar el programa sobre la base real; no sustituye automáticamente la Fase 3 actual.
+
+
+## Corrección de la pregunta tras devolución de la cátedra
+Las fases 1 y 2 documentaron que la asociación ajustada entre seguro y enfermedad reciente es insuficiente para la pregunta original. Por decisión del grupo y aprobación del enfoque reformulado, la variable objetivo de la Fase 3 cambia a `sin_seguro`; **se mantienen las fases anteriores como antecedentes, no se reescribe su evidencia**. Se usó la base REG02 original sin excluir accidentados para el nuevo objetivo.
+
+## Entregables oficiales
+- Notebook: `notebooks/fase3.ipynb`.
+- Scripts: `src/fase3/ejecutar.py`.
+- Evidencia: `docs/FASE3_RESULTADOS.md`.
+- GitHub Actions genera el CSV, métricas, PNG, modelos `.joblib` y notebook HTML.

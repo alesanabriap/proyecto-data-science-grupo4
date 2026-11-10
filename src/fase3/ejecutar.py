@@ -1,4 +1,4 @@
-"""Piloto experimental separado de la Fase 3: no sustituye fases previas."""
+"""Fase 3 oficial: perfiles socioeconómicos y clasificación de cobertura médica."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -30,7 +30,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 RAW = RAIZ/"data/raw/REG02_EPHC_ANUAL_2024.csv"
 TEMP = RAIZ/"data/temporal"
 NBI = RAIZ/"data/externos/nbi_departamental_2022.csv"
-OUT = RAIZ/"output/piloto_cobertura"
+OUT = RAIZ/"output/fase3"
 SEED = 42
 KEY = ["UPM", "NVIVI", "NHOGA", "L02"]
 NUM = ["edad", "anios_estudio", "log_ingreso"]

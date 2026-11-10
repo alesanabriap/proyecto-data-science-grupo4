@@ -1,6 +1,6 @@
-# Resultados validados — piloto de cobertura médica (EPHC 2024)
+# Resultados validados — Fase 3 oficial: cobertura médica (EPHC 2024)
 
-**Ejecución oficial:** [GitHub Actions — piloto cobertura, ejecución satisfactoria](https://github.com/alesanabriap/proyecto-data-science-grupo4/actions/runs/42886654996). Los CSV, gráficos y modelos `.joblib` están disponibles como artifact `piloto-cobertura-2024`. Se trabaja sobre la base original, no sobre la base que excluía accidentes.
+**Ejecución oficial:** [GitHub Actions — Fase 3 cobertura, ejecución satisfactoria](https://github.com/alesanabriap/proyecto-data-science-grupo4/actions/runs/42886654996). Los CSV, gráficos y modelos `.joblib` están disponibles como artifact `fase3-cobertura-2024`. Se trabaja sobre la base original, no sobre la base que excluía accidentes.
 
 ## Nueva pregunta propuesta
 **¿Qué perfiles sociodemográficos y socioeconómicos se asocian a la falta de cobertura médica entre adultos paraguayos, y en qué medida esas características permiten clasificar dicha condición?**
@@ -62,6 +62,6 @@ La reformulación hacia **falta de cobertura médica** ofrece un problema más d
 
 El clustering permite caracterizar grupos con fuerte contraste de cobertura, pero **sus agrupaciones son moderadamente separadas y presentan estabilidad irregular**, y **no mejoran el modelo supervisado**. NBI aporta contexto, pero sus correlaciones no se sostienen tras ajustes para múltiples comparaciones.
 
-**Recomendación:** si la cátedra aprueba la reformulación de la pregunta, conviene considerar cobertura médica como eje principal de la Fase 3, preservando clustering como análisis complementario y el modelo supervisado sin clusters como ganador. No fusionar el PR con `main` hasta la decisión del grupo.
+**Enfoque aprobado:** el grupo eligió cobertura médica como eje principal de la Fase 3, preservando clustering como análisis complementario y el modelo supervisado sin clusters como ganador. No fusionar el PR con `main` antes de la aprobación del grupo.
 
 **Advertencias:** las métricas ponderadas no sustituyen una inferencia completa del diseño muestral; no se infiere relación causal ni riesgo médico. No se afirma que el algoritmo de clustering haya mejorado el desempeño.
