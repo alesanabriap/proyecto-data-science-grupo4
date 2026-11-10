@@ -314,7 +314,7 @@ def main():
         "auc_validacion",ascending=False).iloc[0]
     summary={
         "base":"EPHC 2024, REG02 anual original y trimestres originales",
-        "n_original":n_original,"n_adultos":len(df),"n_desarrollo":len(dev),"n_prueba":len(test),
+        "n_original":original,"n_adultos":len(df),"n_desarrollo":len(dev),"n_prueba":len(test),
         "prevalencia_falta_seguro_pct":100*weighted_mean(df.sin_seguro,df.peso),
         "k_clusters":cluster["k"],"silhouette":cluster["scores"][cluster["k"]],
         "estabilidad_ari":ari,
