@@ -1,0 +1,72 @@
+{
+  "base": "EPHC 2024, REG02 anual original y trimestres originales",
+  "n_original": 57744,
+  "n_adultos": 40266,
+  "n_desarrollo": 28816,
+  "n_prueba": 11450,
+  "prevalencia_falta_seguro_pct": 68.43937774388888,
+  "k_clusters": 3,
+  "silhouette": 0.22369769118165106,
+  "estabilidad_ari": [
+    0.3997113067763863,
+    0.3632882502165933,
+    0.7551394848941552
+  ],
+  "mejor_modelo": "Hist_Gradient_Boosting",
+  "ganador_con_cluster": false,
+  "ganador_auc_validacion": 0.8006696441548499,
+  "mejor_auc_validacion_sin_cluster": 0.8006696441548499,
+  "mejor_auc_validacion_con_cluster": 0.8004942600339464,
+  "auc_mejora_cluster": -0.00017538412090345457,
+  "ganador_en_prueba": {
+    "n": 11450,
+    "prevalencia_sin_seguro_pct": 67.94916643978294,
+    "accuracy": 0.7540854897839012,
+    "balanced_accuracy": 0.687147042361653,
+    "precision": 0.7876517617011802,
+    "recall": 0.8736137722981591,
+    "f1": 0.8284087193942018,
+    "auc_roc": 0.7925152468370653,
+    "brier": 0.16723699538222994
+  },
+  "n_departamentos": 16,
+  "nbi_correlaciones": [
+    {
+      "variable_nbi": "nbi_una_o_mas_pct",
+      "rho": 0.3899927472297349,
+      "p_exploratorio": 0.13535707873296207,
+      "n_territorios": 16
+    },
+    {
+      "variable_nbi": "nbi_vivienda_pct",
+      "rho": 0.4495221007217277,
+      "p_exploratorio": 0.08065687886753078,
+      "n_territorios": 16
+    },
+    {
+      "variable_nbi": "nbi_sanitaria_pct",
+      "rho": 0.1898455260099464,
+      "p_exploratorio": 0.4812906773303121,
+      "n_territorios": 16
+    },
+    {
+      "variable_nbi": "nbi_educacion_pct",
+      "rho": 0.5235294117647059,
+      "p_exploratorio": 0.037412648130149384,
+      "n_territorios": 16
+    },
+    {
+      "variable_nbi": "nbi_subsistencia_pct",
+      "rho": 0.5294117647058824,
+      "p_exploratorio": 0.03495200678951804,
+      "n_territorios": 16
+    }
+  ],
+  "advertencias": [
+    "Piloto exploratorio: ninguna relación implica causalidad.",
+    "NBI de hogares 2022 se cruza con EPHC personas adultas 2024 solo a nivel departamental.",
+    "Las métricas ponderadas no reemplazan un análisis completo del diseño complejo de la EPHC.",
+    "La comparación entre modelos se selecciona en T2 y T3; T4 reservado para evaluación final.",
+    "Se trabaja sobre adultos para evitar que diferencias por dependencia infantil dominen los perfiles."
+  ]
+}

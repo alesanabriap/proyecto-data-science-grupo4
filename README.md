@@ -71,6 +71,7 @@ La semilla aleatoria está fijada en `src/fase2/datos.py`, por lo que los result
 pip install -r requirements.txt
 pytest -q tests/test_fase3.py
 python -m src.fase3.ejecutar
+python -m src.fase3.complementos   # grilla, sobreajuste, importancia y peores casos
 jupyter nbconvert --to notebook --execute --inplace notebooks/fase3.ipynb
 ```
 

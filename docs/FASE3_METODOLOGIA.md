@@ -23,7 +23,7 @@ python -m src.fase3.ejecutar
 
 **Productos:** `output/fase3/resultados.json`, `comparacion_test.csv`, `ranking_validacion.csv`, `resumen_perfiles.csv`, `brechas_descriptivas.csv`, `correlaciones_nbi.csv`, gráficos y modelos joblib. GitHub Actions publica los resultados como artifact.
 
-**Estado:** fase oficial. Los valores y las recomendaciones finales solo se incorporarán después de ejecutar el programa sobre la base real; no sustituye automáticamente la Fase 3 actual.
+**Estado:** fase oficial, ejecutada sobre la base real. Los resultados están en `docs/FASE3_RESULTADOS.md`. Los análisis complementarios (búsqueda en grilla, brecha de sobreajuste, importancia de variables y casos peor predichos) se generan con `python -m src.fase3.complementos` en `output/fase3/complementos/`.
 
 
 ## Corrección de la pregunta tras devolución de la cátedra
