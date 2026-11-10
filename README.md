@@ -57,3 +57,22 @@ jupyter nbconvert --to html notebooks/fase2.ipynb --output-dir docs --output fas
 La semilla aleatoria está fijada en `src/fase2/datos.py`, por lo que los resultados son idénticos en cada ejecución.
 
 `notebooks/fase2.ipynb` es un archivo generado: los cambios se hacen en los notebooks de cada parte y luego se vuelve a unir.
+
+## Fase 3: perfiles sociodemográficos, clasificación y NBI
+
+El alcance se reformuló por devolución docente: caracterizar perfiles poblacionales y clasificar la enfermedad reciente autorreportada, manteniendo los datos EPHC 2024 de las fases previas e integrando NBI 2022 a nivel **departamental** como contexto.
+
+- [Metodología, variables, decisiones y ejecución](docs/FASE3_METODOLOGIA.md)
+- [Resultados reales, interpretación y límites](docs/FASE3_RESULTADOS.md)
+- [Notebook de la Fase 3](notebooks/fase3.ipynb)
+- [Ejecución reproducible en GitHub Actions](.github/workflows/fase3.yml)
+
+La ejecución en GitHub Actions genera un artefacto ZIP llamado `fase3-resultados-epch-2024` con archivos CSV, figuras, modelo `.joblib` y notebook HTML.
+
+```bash
+pip install -r requirements.txt
+pytest -q tests/test_fase3.py
+python -m src.fase3.ejecutar
+```
+
+**Precaución:** el modelo no predice una enfermedad clínica futura y el cruce NBI no tiene interpretación causal.
