@@ -222,7 +222,7 @@ def main():
     for stop,next_q in [(1,2),(2,3)]:
         train=df.loc[df.trimestre<=stop]
         valid=df.loc[df.trimestre==next_q]
-        fold_train,fold_valid,_=segment(train,valid,k=cluster["k"],pick_k=False)
+        fold_train,fold_valid,_=segment(train,valid,pick_k=True)
         for with_c in [False,True]:
             aa,bb=(fold_train,fold_valid) if with_c else (train,valid)
             for model_name in ["Baseline","Regresion_logistica","Random_Forest","Hist_Gradient_Boosting"]:
