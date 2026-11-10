@@ -1,0 +1,36 @@
+name: Fase 3 oficial — Cobertura EPHC 2024
+on:
+  push:
+    branches: [main, experimento-cobertura-clustering-2024]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  fase3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt ipykernel
+      - name: Pruebas unitarias de Fase 3
+        run: python -m pytest -q tests/test_fase3.py
+      - name: Ejecutar modelos sobre EPHC 2024
+        run: python -m src.fase3.ejecutar
+      - name: Ejecutar y exportar notebook oficial
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace notebooks/fase3.ipynb --ExecutePreprocessor.timeout=1200
+          jupyter nbconvert --to html notebooks/fase3.ipynb --output-dir output/fase3 --output fase3.html
+      - name: Publicar resultados de Fase 3
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fase3-cobertura-2024
+          path: |
+            output/fase3/
+            notebooks/fase3.ipynb
+          if-no-files-found: warn
