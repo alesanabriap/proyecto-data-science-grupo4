@@ -62,6 +62,6 @@ La reformulación hacia **falta de cobertura médica** ofrece un problema más d
 
 El clustering permite caracterizar grupos con fuerte contraste de cobertura, pero **sus agrupaciones son moderadamente separadas y presentan estabilidad irregular**, y **no mejoran el modelo supervisado**. NBI aporta contexto, pero sus correlaciones no se sostienen tras ajustes para múltiples comparaciones.
 
-**Enfoque aprobado:** el grupo eligió cobertura médica como eje principal de la Fase 3, preservando clustering como análisis complementario y el modelo supervisado sin clusters como ganador. No fusionar el PR con `main` antes de la aprobación del grupo.
+**Enfoque aprobado:** el grupo eligió cobertura médica como eje principal de la Fase 3, preservando clustering como análisis complementario y el modelo supervisado sin clusters como ganador.
 
 **Advertencias:** las métricas ponderadas no sustituyen una inferencia completa del diseño muestral; no se infiere relación causal ni riesgo médico. No se afirma que el algoritmo de clustering haya mejorado el desempeño.
