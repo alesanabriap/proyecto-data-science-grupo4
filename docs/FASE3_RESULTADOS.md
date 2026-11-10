@@ -48,6 +48,18 @@ Random Forest obtuvo el mejor AUC-ROC en validación (aprox. **0,602**) y fue se
 
 Una mejora futura sería optimizar un umbral de clasificación con datos de validación **sin consultar T4** y evaluarlo una sola vez en una partición final independiente.
 
+## Importancia de variables del Random Forest
+
+La ejecución final también generó `output/fase3/importancia_variables.csv` y `output/fase3/importancia_variables.png`. Los tres principales atributos codificados fueron:
+
+| Característica | Importancia por reducción de impureza |
+|---|---:|
+| Edad | 34,77 % |
+| Años de estudio | 23,59 % |
+| Quintil de ingreso | 6,83 % |
+
+Estas importancias son propias del algoritmo y pueden favorecer variables continuas. **No deben interpretarse como efectos causales**. La importancia de la edad concuerda con lo encontrado en la Fase 2, y justifica revisar diferencias por edad al interpretar los clusters.
+
 ## Cruce departamental con NBI (exploratorio)
 
 Se intersectaron **16 unidades territoriales** de la EPHC 2024 con la tabla departamental del INE (NBI de hogares, Censo 2022). Correlaciones Spearman, sin ajuste por comparaciones múltiples ni pretensión causal:
