@@ -92,6 +92,30 @@ def ejecutar(df):
     joblib.dump({"modelo": modelo, "columnas": NUMERICAS+CATEGORICAS,
         "ganador": ganador, "periodo_entrenado": "T1-T3_2024"},
         SALIDA/"clasificador.joblib", compress=3)
+    # Interpretación de variables del modelo ganador: sin reutilizar etiquetas de T4.
+    estimador = modelo.named_steps["modelo"]
+    nombres = modelo.named_steps["preparar"].get_feature_names_out()
+    if hasattr(estimador, "feature_importances_"):
+        valores = estimador.feature_importances_
+        medida = "importancia_impureza_arbol"
+    elif hasattr(estimador, "coef_"):
+        valores = np.abs(estimador.coef_[0])
+        medida = "magnitud_coeficiente_absoluto"
+    else:
+        valores, medida = None, "no_disponible"
+    if valores is not None:
+        importancia = pd.DataFrame({"feature": nombres, "valor": valores})
+        importancia = importancia.sort_values("valor", ascending=False)
+        importancia["metrica"] = medida
+        importancia.to_csv(SALIDA/"importancia_variables.csv", index=False)
+        top = importancia.head(15).iloc[::-1]
+        fig, ax = plt.subplots(figsize=(9.2, 6.0))
+        ax.barh(top["feature"].astype(str), top["valor"], color="#3272b9")
+        ax.set_title(f"Variables del modelo ganador — {ganador}")
+        ax.set_xlabel(medida.replace("_", " "))
+        fig.tight_layout()
+        fig.savefig(SALIDA/"importancia_variables.png", dpi=180)
+        plt.close(fig)
     pred = modelo.predict(test[NUMERICAS+CATEGORICAS])
     y = test[OBJETIVO].astype(int).to_numpy()
     w = test.factor_expansion.to_numpy(dtype=float)
