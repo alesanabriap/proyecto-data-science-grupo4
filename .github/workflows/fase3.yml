@@ -1,0 +1,39 @@
+name: Fase 3 · Validar modelos con EPHC 2024
+
+on:
+  push:
+    branches:
+      - fase3-perfiles-nbi-modelos
+  workflow_dispatch:
+
+jobs:
+  fase3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt ipykernel
+      - name: Pruebas unitarias
+        run: python -m pytest -q tests/test_fase3.py
+      - name: Ejecutar modelos con datos oficiales
+        run: python -m src.fase3.ejecutar
+      - name: Exportar notebook ejecutado
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace notebooks/fase3.ipynb --ExecutePreprocessor.timeout=1800
+          jupyter nbconvert --to html notebooks/fase3.ipynb --output-dir output/fase3 --output fase3.html
+      - name: Subir resultados de Fase 3
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fase3-resultados-epch-2024
+          path: |
+            output/fase3/
+            notebooks/fase3.ipynb
+          if-no-files-found: warn
